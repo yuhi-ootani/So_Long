@@ -6,14 +6,14 @@
 #    By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 10:39:54 by oyuhi             #+#    #+#              #
-#    Updated: 2025/01/12 14:04:40 by oyuhi            ###   ########.fr        #
+#    Updated: 2025/01/13 16:18:45 by oyuhi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 MLX_DIR = minilibx-linux
 # -L :Specifies a directory to search for libraries.

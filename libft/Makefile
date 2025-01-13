@@ -6,7 +6,7 @@
 #    By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 13:46:22 by oyuhi             #+#    #+#              #
-#    Updated: 2025/01/12 13:50:39 by oyuhi            ###   ########.fr        #
+#    Updated: 2025/01/13 15:27:30 by oyuhi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 		ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c \
 		ft_lstnew_bonus.c ft_lstsize_bonus.c \
-		ft_get_next_line_utils.c ft_get_next_line_utils.c \
+		ft_get_next_line.c ft_get_next_line_utils.c \
 		ft_printf.c ft_printf_utils.c
 		
 
