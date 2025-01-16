@@ -6,7 +6,7 @@
 #    By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 10:39:54 by oyuhi             #+#    #+#              #
-#    Updated: 2025/01/16 10:01:59 by oyuhi            ###   ########.fr        #
+#    Updated: 2025/01/16 10:31:45 by oyuhi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = so_long
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-
+#https://github.com/42Paris/minilibx-linux
 MLX_DIR = minilibx-linux
 # -L :Specifies a directory to search for libraries.
 # -l :Specifies the name of the library to link. -l<library_name> = -l lib<library_name>.a
