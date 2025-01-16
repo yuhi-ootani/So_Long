@@ -6,14 +6,14 @@
 #    By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/09 10:39:54 by oyuhi             #+#    #+#              #
-#    Updated: 2025/01/13 16:18:45 by oyuhi            ###   ########.fr        #
+#    Updated: 2025/01/16 10:01:59 by oyuhi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 CC = cc
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 MLX_DIR = minilibx-linux
 # -L :Specifies a directory to search for libraries.
@@ -26,6 +26,7 @@ MLX_DIR = minilibx-linux
 
 # -lm : math library
 MLX_FLAGS = -L$(MLX_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lz -lm
+LIBMLX = $(MLX_DIR)/libmlx_Linux.a
 LIBFT = libft/libft.a
 
 
@@ -33,19 +34,34 @@ SRC_DIR = srcs
 INC_DIR = includes
 OBJ_DIR = objs
 
-SRCS = $(wildcard $(SRC_DIR)/*.c) 
+SRCS =  $(SRC_DIR)/ft_array_dup.c \
+		$(SRC_DIR)/ft_array_free.c \
+		$(SRC_DIR)/ft_error.c \
+		$(SRC_DIR)/ft_strlen_newline.c \
+		$(SRC_DIR)/main.c \
+		$(SRC_DIR)/map_parse.c \
+		$(SRC_DIR)/map_validate.c \
+		$(SRC_DIR)/movement.c 
+		
+		
+# SRCS = $(SRC_DIR)/so_long.c 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 	
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS) $(LIBMLX)
 	$(CC) $(CFLAGS)  $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
 
 #-C :Change Directory.
 $(LIBFT):
 	make -C libft
+
+$(LIBMLX) : 
+	if [ ! -f $(LIBMLX) ]; then \
+		cd $(MLX_DIR) && ./configure && make; \
+	fi
 
 # Create the object directory if it doesn't exist
 # -p:  mkdir would raise an error if the directory already exists. The -p flag avoids this issue.
